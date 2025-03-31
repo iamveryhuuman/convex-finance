@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 3%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 3%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 0% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 70%;
+
+    /* Strategic accent colors */
+    --accent-blue: 210 100% 50%;
+    --accent-teal: 180 100% 40%;
+    --accent-amber: 45 100% 50%;
+    --accent-red: 0 100% 50%;
+    --accent-green: 120 100% 40%;
+
+    --radius: 0.25rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .game-border {
+    @apply relative border border-zinc-800 rounded-md overflow-hidden;
+  }
+
+  .game-border::before {
+    content: "";
+    @apply absolute top-0 left-0 w-2 h-2 border-t border-l border-white;
+  }
+
+  .game-border::after {
+    content: "";
+    @apply absolute top-0 right-0 w-2 h-2 border-t border-r border-white;
+  }
+
+  .game-border-bottom::before {
+    content: "";
+    @apply absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white;
+  }
+
+  .game-border-bottom::after {
+    content: "";
+    @apply absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white;
+  }
+
+  .data-label {
+    @apply text-xs uppercase tracking-wider text-zinc-400 font-medium;
+  }
+
+  .data-value {
+    @apply font-mono text-sm tracking-tight;
+  }
+
+  .terminal-header {
+    @apply flex items-center gap-2 text-xs uppercase font-medium text-zinc-400;
+    letter-spacing: 0.2em;
+  }
+
+  .terminal-header::before {
+    content: "$";
+    @apply text-white mr-1;
+  }
+
+  .card-header {
+    @apply border-b border-zinc-800 px-4 py-2 flex items-center justify-between;
+  }
+
+  .card-title {
+    @apply text-sm uppercase tracking-wider font-medium;
+  }
+
+  .blocky-title {
+    @apply font-mono uppercase font-bold;
+    letter-spacing: 0.25em;
+  }
+
+  /* Color accent classes */
+  .accent-blue {
+    color: hsl(var(--accent-blue));
+  }
+
+  .accent-teal {
+    color: hsl(var(--accent-teal));
+  }
+
+  .accent-amber {
+    color: hsl(var(--accent-amber));
+  }
+
+  .accent-red {
+    color: hsl(var(--accent-red));
+  }
+
+  .accent-green {
+    color: hsl(var(--accent-green));
+  }
+
+  .bg-accent-blue {
+    background-color: hsl(var(--accent-blue));
+  }
+
+  .bg-accent-teal {
+    background-color: hsl(var(--accent-teal));
+  }
+
+  .bg-accent-amber {
+    background-color: hsl(var(--accent-amber));
+  }
+
+  .bg-accent-red {
+    background-color: hsl(var(--accent-red));
+  }
+
+  .bg-accent-green {
+    background-color: hsl(var(--accent-green));
+  }
+
+  .border-accent-blue {
+    border-color: hsl(var(--accent-blue));
+  }
+
+  .border-accent-teal {
+    border-color: hsl(var(--accent-teal));
+  }
+
+  .border-accent-amber {
+    border-color: hsl(var(--accent-amber));
+  }
+
+  .border-accent-red {
+    border-color: hsl(var(--accent-red));
+  }
+
+  .border-accent-green {
+    border-color: hsl(var(--accent-green));
+  }
+}
+
+/* Custom scrollbar for code-like feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cccccc;
+}
+
