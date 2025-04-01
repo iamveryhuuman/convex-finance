@@ -38,8 +38,8 @@ export default function RegisterPage() {
         throw error
       }
 
-      // Redirect to verification page or login
-      router.push("/auth/verification")
+      // Redirect to verification page with email
+      router.push(`/auth/verification?email=${encodeURIComponent(email)}`)
     } catch (err: any) {
       setError(err.message || "Failed to sign up")
     } finally {
